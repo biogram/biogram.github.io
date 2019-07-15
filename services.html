@@ -15,7 +15,53 @@
   <meta charset="UTF-8">
   <!-- Site Title -->
   <title>배송조회</title>
-
+  <style>
+	
+		/*-------------- 17. Footer Bottom ------------*/
+		.footer-bottom-area {
+		  background: #292929 none repeat scroll 0 0;
+		}
+		.footer-bottom-area p {
+		  color: #d7d7d7;
+		  font-family: montserrat;
+		  font-size: 13px;
+		  font-weight: 400;
+		  margin-bottom: 0;
+		  padding: 35px 0;
+		}
+		.footer-bottom-area p a {
+		  font-weight: 500;
+		  color: #d7d7d7;
+		}
+		.footer-bottom-area p a:hover {
+		  color: #ff4081;
+		}
+		.footer-bottom-area .footer-btm-img {
+		  float: right;
+		  padding: 27px 0;
+		}
+		.fotbtm-menu {
+		  padding: 34px 0;
+		  text-align: center;
+		}
+		.fotbtm-menu ul li {
+		  border-right: 1px solid #d7d7d7;
+		  display: inline-block;
+		  line-height: 15px;
+		}
+		.fotbtm-menu ul li:last-child {
+		  border: medium none;
+		}
+		.fotbtm-menu ul li a {
+		  color: #d7d7d7;
+		  font-family: montserrat;
+		  font-size: 13px;
+		  font-weight: 300;
+		  padding: 0 10px;
+		  text-decoration: floralwhite;
+		}
+		.fotbtm-menu ul li a:hover{color:#ff4081;}
+			</style>
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <!--
     CSS
@@ -30,36 +76,44 @@
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
-    <header id="header" id="home">
+    
+		<header id="header" id="home">
       
-      <div class="container main-menu">
-        <div class="row align-items-center justify-content-between d-flex">
-          <div id="logo">
-            <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
-          </div>
-          <nav id="nav-menu-container">
-            <ul class="nav-menu">
-              <li class="menu-active"><a href="index.html">Home</a></li>
-			  <li><a href="about.html">About</a></li>
-			  
-			  <li class="menu-has-children"><a href="">Product</a>
-                <ul>
-                    <li><a href="elements.html">Care Kit</a></li>
-				
-						<li><a href="project-details.html">Ampule</a></li>
-						<li><a href="project-details2.html">Toner</a></li>
-						<li><a href="project-details3.html">Emulsion</a></li>
-						<!-- <li><a href="project-details4.html">네번째 제품/a></li> -->
-                </ul>
-							</li>
-							<li><a href="services.html">Dealer</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </nav><!-- #nav-menu-container -->
-        </div>
-      </div>
-    </header><!-- #header -->
-
+				<div class="container main-menu">
+				  <div class="row align-items-center justify-content-between d-flex">
+					<div id="logo">
+					  <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+					</div>
+					<nav id="nav-menu-container">
+					  <ul class="nav-menu">
+						<li class="menu-active"><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						
+						<li class="menu-has-children"><a href="">Product</a>
+						  <ul>
+							  <li><a href="elements.html">Care Kit</a></li>
+						  
+								  <li><a href="project-details.html">Ampule</a></li>
+								  <li><a href="project-details2.html">Toner</a></li>
+								  <li><a href="project-details3.html">Emulsion</a></li>
+								  <!-- <li><a href="project-details4.html">네번째 제품/a></li> -->
+						  </ul>
+									  </li>
+										<li class="menu-has-children"><a href="services.html">Dealer Login</a>
+						  <ul>
+								<li><a href="dealer_web/Login.html">Big Dealer</a></li>
+							
+									<li><a href="dealer_web/login-smalldealer.html">Small Dealer </a></li>
+									<li><a href="dealer_web/login.html">Admin</a></li>
+								  <!-- <li><a href="project-details4.html">네번째 제품/a></li> -->
+						  </ul>
+									  </li>
+						<li><a href="contact.html">Contact</a></li>
+					  </ul>
+					</nav><!-- #nav-menu-container -->
+				  </div>
+				</div>
+			  </header><!-- #header -->
 			<!-- start banner Area -->
 			<section class="banner-area relative" id="home">
 				<div class="overlay overlay-bg"></div>
