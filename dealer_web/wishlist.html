@@ -24,11 +24,16 @@
 			let result = "";
 			async function login(){
 				result = await axios.post(url, {
-				ordername: document.getElementById('deal').value,
-				count: document.getElementById('cnt').value,
-				dealerno: document.getElementById('delearname').value,
-				adress: document.getElementById('adre').value,
-				name: document.getElementById('passwd').value
+				OrderNumber: document.getElementById('OrderNumber').value,
+				BigDealer: document.getElementById('BigDealer').value,
+				SmallDealer: document.getElementById('SmallDealer').value,
+				PhoneNumber: document.getElementById('PhoneNumber').value,
+				ShippingAddress: document.getElementById('ShippingAddress').value,
+				Product: document.getElementById('Product').value,
+				Amount: document.getElementById('Amount').value,
+				ProcessingResult: document.getElementById('ProcessingResult').value,
+				WayNumber: document.getElementById('WayNumber').value,
+				Hide: document.getElementById('Hide').value,	
 			})
 			.catch( e => {
 				alert('로그인 실패! (비밀번호나 ID를 확인해주세요.) ');
@@ -157,15 +162,19 @@
 			<div class="container">
 				<div class="section-titel">
 					<h3>Order</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor psum dolor sit ame</p>
+					<p>you can order item with text also</p> 
 				</div>
 				<div class="login" id = "login" method="POST">
-					<input type="text" placeholder="상품명" name="deal" id="deal"><br>
-					<input type="text" placeholder="주소" name="adre" id="adre"><br>
-					<input type="text" placeholder="수량" name="cnt" id="cnt"><br>
-					<input type="text" placeholder="딜러명" name="dealername" id="dealername"><br>
-					<input type="text" placeholder="주문자 이름" name="passwd" id="passwd"><br>
-					<input type="submit" text = "LOGIN!" onclick="login()"></button>
+						<input type="text" placeholder="OrderNumber" name="OrderNumber" id="OrderNumber"><br>
+						<input type="text" placeholder="BigDealer" name="BigDealer" id="BigDealer"><br>
+						<input type="text" placeholder="SmallDealer" name="SmallDealer" id="SmallDealer"><br>
+						<input type="text" placeholder="PhoneNumber" name="PhoneNumber" id="PhoneNumber"><br>
+						<input type="text" placeholder="ShippingAddress" name="ShippingAddress" id="ShippingAddress"><br>
+						<input type="text" placeholder="Product" name="Product" id="Product"><br>
+						<input type="text" placeholder="Amount" name="Amount" id="Amount"><br>
+						<input type="text" placeholder="ProcessingResult" name="ProcessingResult" id="ProcessingResult"><br>
+						<input type="text" placeholder="WayNumber" name="WayNumber" id="WayNumber"><br>
+						<input type="text" placeholder="Hide" name="Hide" id="Hide"><br>
 				</div>
 		</div>
 
