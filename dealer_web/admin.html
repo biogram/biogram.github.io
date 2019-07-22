@@ -4,9 +4,8 @@
 <head>
 
   <meta charset="UTF-8">
-
-  <title>Biogram 소딜러 계정 생성 </title>
-
+	<meta http-equiv="Content-Security-Policy" content="block-all-mixed-content">
+	<title>BioGram 대딜러</title>
     <style>
 @import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
@@ -50,8 +49,8 @@ body{
 
 .header{
 	position: absolute;
-	top: calc(55% - 35px);
-	left: calc(35% - 255px);
+	top: calc(50% - 35px);
+	left: calc(50% - 255px);
 	z-index: 2;
 }
 
@@ -88,7 +87,6 @@ body{
 	font-family: 'Exo', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
-	margin-top: 10px;
 	padding: 4px;
 }
 
@@ -150,52 +148,53 @@ body{
 ::-moz-input-placeholder{
    color: rgba(255,255,255,0.6);
 }
+
+
+
 </style>
 
-<script src="https://unpkg.com/axios/dist/axios.min.js" type="text/javascript">
+   <script src="https://unpkg.com/axios/dist/axios.min.js" type="text/javascript">
 
 </script>
 <script>
-  let url = "http://18.162.158.37:3030/auth/regi/bigdealer";
+  let url = "http://18.162.158.37:3030/auth/login/admin";
     let result = "";
-	async function signup(){
+	async function login(){
         result = await axios.post(url, {
-        		id: document.getElementById('id').value,
-				passwd: document.getElementById('passwd').value,
-        		account: document.getElementById('phone').value
+        id: document.getElementById('ids').value,
+        passwd: document.getElementById('passwd').value
     })
-    .catch( e => { 
-		alert('회원가입 실패!');
-        window.location.href = "signup.html";    
-			})
-			if(result.status === 200){
-        alert('회원가입 성공!');
-				window.location.href = "index.html";  
-				localStorage.setItem("keyid",document.getElementById('id').value);
-			} 
+    .catch( e => {
+        alert('로그인 실패! (비밀번호나 ID를 확인해주세요.) ');
+        window.location.href = "login.html";    
+	})
+	if(result.status === 200){
+		alert("로그인 성공! (405에러는 DDOS방지를 위해 뜨는 창이니 새로고침 해주시면 정상적으로 사용 가능합니다.)");
+		localStorage.setItem("keyid",document.getElementById('ids').value);
+		window.location.href = "signup.html";
+	}
 }	
 </script>
 
 
-
-    <link rel="shortcut icon" href="apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
@@ -203,15 +202,13 @@ body{
   <div class="body"></div>
 		<div class="grad"></div>
 		<div class="header">
-			<div>Biogram make small<span></span></div>
+			<div>BioGram<br>admin<span></span></div>
 		</div>
 		<br>
-		<div class="login" id = "regi" method="POST">
-				<input type="text" placeholder="아이디" name="id" id="id"><br>
+		<div class="login" id = "login" method="POST">
+                <input type="text" placeholder="아이디" name="ids" id="ids"><br>
 				<input type="password" placeholder="비밀번호" name="passwd" id="passwd"><br>
-				<input type="text" placeholder="계좌번호" name="phone" id="phone"><br> 
-				<input type="submit"  onclick="signup()" value="signup">
+				<input type="submit" text = "LOGIN!" onclick="login()"></button>
 		</div>
 </body>
-
-</html>
+</html> 
